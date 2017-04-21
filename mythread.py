@@ -1,4 +1,5 @@
-import _thread
+#-*- coding:utf-8 -*-
+import thread
 import time
 
 def print_time(threadName,delay):
@@ -9,8 +10,8 @@ def print_time(threadName,delay):
         print("%s: %s" %(threadName,time.ctime(time.time())))
 
 try:
-    _thread.start_new_thread(print_time,("T-1",2))
-    _thread.start_new_thread(print_time,("T-2",4))
+    thread.start_new_thread(print_time,("T-1",2))
+    thread.start_new_thread(print_time,("T-2",4))
 except:
     print("Error:无法启动线程")
 
